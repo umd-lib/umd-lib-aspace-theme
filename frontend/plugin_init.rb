@@ -1,4 +1,5 @@
 require 'erb'
+require 'socket'
 include ERB::Util
 
 # A simple way to add helpers via a plugin
@@ -6,6 +7,16 @@ include ERB::Util
 # for example, you could put the helper in its own file an require_relative to that file
 
 module UMDLibEnvironmentBannerHelper
+  
+  @@environment_name = case Socket.gethostname
+                       when /local$/
+                        'Local'
+                       when /dev$/
+                        'Development'
+                       when /stage$/
+                         'Staging'
+		                   end
+	  
   # https://confluence.umd.edu/display/LIB/Create+Environment+Banners
   def umd_lib_environment_banner
     current_env = environment_name
@@ -17,11 +28,9 @@ module UMDLibEnvironmentBannerHelper
   end
 
   def environment_name
-    return 'Local' if Rails.env.development? || Rails.env.vagrant?
-    hostname = `hostname -s`
-    return 'Development' if hostname =~ /dev$/
-    return 'Staging' if hostname =~ /stage$/
-  end
+    @@environment_name
+  end	     
+
 end
 
 # here we reopen the ApplicationController (after Rails has started)

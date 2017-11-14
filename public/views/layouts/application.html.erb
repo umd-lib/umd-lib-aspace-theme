@@ -57,5 +57,22 @@
 		<% end %>
 	<% end %>
 
+  <!-- UMD Wrapper -->
+  <script src="//s3.amazonaws.com/umdheader.umd.edu/app/js/main.min.js"></script>
+  <script> umdHeader.init({ news: false }); </script>
+  <script type="text/javascript">
+    jQuery(document).ready(function() {
+        App.init();
+        $('[data-toggle="tooltip"]').tooltip();
+		        });
+    /**
+     * Open the UMD header in collapsed mode by default
+     */
+    window.onload = function(){
+      $('body').css('paddingTop', '31px');
+      $('#umh-cont').addClass('collapsed');
+      $('#umh-main').hide();
+    };
+  </script>
 </body>
 </html>

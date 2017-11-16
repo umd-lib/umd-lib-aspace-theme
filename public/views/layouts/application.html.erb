@@ -74,5 +74,17 @@
       $('#umh-main').hide();
     };
   </script>
+
+  <% if AppConfig.has_key?(:public_google_analytics_code) && !AppConfig[:public_google_analytics_code].empty? %>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=<%= AppConfig[:public_google_analytics_code] %>"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', '<%= AppConfig[:public_google_analytics_code] %>');
+    </script>
+  <% end %>
+
 </body>
 </html>

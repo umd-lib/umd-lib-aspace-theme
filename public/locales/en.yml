@@ -1,3 +1,33 @@
 en:
-    brand:
-        title: Archival Collections
+  brand:
+    title: Archival Collections
+
+  repository:
+    _singular: Library
+    _plural: Libraries
+    what: What's in this Library?
+    details: Library Details
+    part: Part of the
+
+  pui_agent:
+    _singular: Person
+    _plural:  People
+    related: Related Person
+    creator: Creator
+
+  subject:
+    _singular: Topic
+    _plural: Topics
+    used_within: Used within
+
+  search_results:
+    filter:
+      subjects: Topic
+
+  internal_links:
+    collection: Collection Contents
+
+  actions:
+    hierarch: Collection Contents
+
+  external_docs: Inventories/Additional Information

@@ -59,22 +59,7 @@
 	<% end %>
 
   <!-- UMD Wrapper -->
-  <script src="//s3.amazonaws.com/umdheader.umd.edu/app/js/main.min.js"></script>
-  <script> umdHeader.init({ news: false }); </script>
-  <script type="text/javascript">
-    jQuery(document).ready(function() {
-        App.init();
-        $('[data-toggle="tooltip"]').tooltip();
-		        });
-    /**
-     * Open the UMD header in collapsed mode by default
-     */
-    window.onload = function(){
-      $('body').css('paddingTop', '31px');
-      $('#umh-cont').addClass('collapsed');
-      $('#umh-main').hide();
-    };
-  </script>
+  <script src="https://umd-header.umd.edu/build/bundle.js?search=0&search_domain=&events=0&news=0&schools=0&admissions=0&support=0&support_url=&wrapper=&sticky=0"></script>
 
   <% if AppConfig.has_key?(:public_google_analytics_code) && !AppConfig[:public_google_analytics_code].empty? %>
     <!-- Global site tag (gtag.js) - Google Analytics -->

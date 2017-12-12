@@ -23,6 +23,8 @@ en:
   search_results:
     filter:
       subjects: Topic
+      published_agents: People
+      agents_text: People
 
   internal_links:
     collection: Collection Contents
@@ -31,3 +33,11 @@ en:
     hierarch: Collection Contents
 
   external_docs: Inventories/Additional Information
+
+  all_agents: People
+
+  an_agent: Person
+
+  agent:
+    _singular: Person
+    _plural: People

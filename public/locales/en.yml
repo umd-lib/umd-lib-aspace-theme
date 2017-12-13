@@ -1,3 +1,5 @@
 en:
-    brand:
-        title: Archival Collections
+  brand:
+    title: Archival Collections
+  actions:
+    search_in: "Search Within %{type}"

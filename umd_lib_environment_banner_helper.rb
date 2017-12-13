@@ -2,7 +2,7 @@ require 'socket'
 
 module UMDLibEnvironmentBannerHelper
 
-  @@environment_name = case Socket.gethostname
+  @@environment_name = case Socket.gethostname.split(".").first
                        when /local$/
                         'Local'
                        when /dev$/

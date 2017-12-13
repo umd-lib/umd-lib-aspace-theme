@@ -1,6 +1,9 @@
 en:
   brand:
     title: Archival Collections
+    
+  actions:
+    search_in: "Search Within %{type}"
 
   repository:
     _singular: Library

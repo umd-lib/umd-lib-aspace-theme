@@ -1,6 +1,7 @@
 en:
   brand:
     title: Archival Collections
+    welcome_page_title: ''
     
   actions:
     search_in: "Search Within %{type}"

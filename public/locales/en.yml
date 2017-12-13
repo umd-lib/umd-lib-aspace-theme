@@ -2,9 +2,10 @@ en:
   brand:
     title: Archival Collections
     welcome_page_title: ''
-    
+
   actions:
     search_in: "Search Within %{type}"
+    hierarch: Collection Contents
 
   repository:
     _singular: Library
@@ -33,8 +34,6 @@ en:
   internal_links:
     collection: Collection Contents
 
-  actions:
-    hierarch: Collection Contents
 
   external_docs: Inventories/Additional Information
 

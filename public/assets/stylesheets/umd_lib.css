@@ -68,3 +68,8 @@ h1, h2, h3, h4, h5, h6 {
 #sidebar .search .form-group #filter_q0 {
   width: 100%;
 }
+
+.nav-pills > li.disabled a, .nav-pills > li.disabled a:hover {
+  background: #ccc;
+  color: #aaa;
+}

@@ -44,3 +44,5 @@ en:
   agent:
     _singular: Person
     _plural: People
+
+  help_tab: Help

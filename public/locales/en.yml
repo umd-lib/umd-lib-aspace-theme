@@ -25,10 +25,15 @@ en:
     _plural: Items/Folders/Series
     _public:
       messages:
-        no_components: Item/Foldder/Series has no components
+        no_components: Item/Folder/Series has no components
 
   digital_object:
     _singular: Digital Material
+
+  resource:
+    _public:
+      finding_aid:
+        head: Administrative Information
 
   subject:
     _singular: Topic

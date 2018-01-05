@@ -20,16 +20,37 @@ en:
     related: Related Person
     creator: Creator
 
+  archival_object:
+    _singular: Item/Folder/Series
+    _plural: Items/Folders/Series
+    _public:
+      messages:
+        no_components: Item/Folder/Series has no components
+
+  digital_object:
+    _singular: Digital Material
+
+  resource:
+    _public:
+      finding_aid:
+        head: Administrative Information
+
   subject:
     _singular: Topic
     _plural: Topics
     used_within: Used within
+
+  search-limits:
+    all: all record types
+    repository: libraries
+    repositories: libraries
 
   search_results:
     filter:
       subjects: Topic
       published_agents: People
       agents_text: People
+      repository: Library
 
   internal_links:
     collection: Collection Contents

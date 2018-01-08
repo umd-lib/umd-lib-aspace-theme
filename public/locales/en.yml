@@ -1,0 +1,69 @@
+en:
+  brand:
+    title: Archival Collections
+    welcome_page_title: ''
+
+  actions:
+    search_in: "Search Within %{type}"
+    hierarch: Collection Contents
+
+  repository:
+    _singular: Library
+    _plural: Libraries
+    what: What's in this Library?
+    details: Library Details
+    part: Part of the
+
+  pui_agent:
+    _singular: Person
+    _plural:  People
+    related: Related Person
+    creator: Creator
+
+  archival_object:
+    _singular: Item/Folder/Series
+    _plural: Items/Folders/Series
+    _public:
+      messages:
+        no_components: Item/Folder/Series has no components
+
+  digital_object:
+    _singular: Digital Material
+
+  resource:
+    _public:
+      finding_aid:
+        head: Administrative Information
+
+  subject:
+    _singular: Topic
+    _plural: Topics
+    used_within: Used within
+
+  search-limits:
+    all: all record types
+    repository: libraries
+    repositories: libraries
+
+  search_results:
+    filter:
+      subjects: Topic
+      published_agents: People
+      agents_text: People
+      repository: Library
+
+  internal_links:
+    collection: Collection Contents
+
+
+  external_docs: Inventories/Additional Information
+
+  all_agents: People
+
+  an_agent: Person
+
+  agent:
+    _singular: Person
+    _plural: People
+
+  help_tab: Help

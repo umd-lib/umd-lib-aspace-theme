@@ -1,0 +1,91 @@
+@charset "UTF-8";
+/* Custom styles for ArchivesSpace Public UI */
+
+#header>.row {
+    height: auto;
+    border-bottom: 0;
+    padding:0 0 10px 0; 
+    margin:10px 10px 0 0;
+}
+.panel-footer a,.panel-footer a:hover,.panel-footer a:active {
+    color: #f0ad4e;
+}
+.panel-footer a:hover {
+    text-decoration: underline;
+}
+.app-title{
+    color: #000;
+    font-size: 34px;  
+}
+.app-title, a:hover {
+    color: #000;
+    text-decoration: none;
+}
+.top-bar {
+    background: #fefefe !important;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+}
+h1, h2, h3, h4, h5, h6 {
+    color: #a40404;    
+    margin-top: 5px;
+    text-shadow: none; 
+    font-weight: normal; 
+    font-family: "Open Sans", Arial, sans-serif;
+} 
+.panel-footer h2, .panel-footer h3, .panel-footer h4 {
+    color: #fff;
+    background: none;
+    text-shadow: none;
+}
+.panel-footer ul{
+    margin-left: -25px;
+}
+.headline {
+    display: block;
+    margin: 10px 0 25px 0;
+    border-bottom: 1px dotted #e4e9f0;
+}
+.headline h2, .headline h3, .headline h4 {
+    border-bottom: 2px solid #f0ad4e;
+    margin: 0 0 -2px 0;
+    padding-bottom: 5px;
+    display: inline-block;
+}
+.pagination>.active>a, .pagination>.active>a:hover, .pagination>.active>a:focus, .pagination>.active>span, .pagination>.active>span:hover, .pagination>.active>span:focus {
+    background-color: #a40404;
+    border-color: #a40404;
+}
+.pagination>li>a:hover {
+    background-color: #b61332;
+    color: #fff;
+}
+.btn-primary {
+    background-color: #a40404;
+    border-color: #a40404;
+}
+.btn-primary:hover {
+    background-color: #b61332;
+    border-color: #b61332;
+}
+.record-type-badge.resource {
+    color: #b61332;
+    border-color: #b61332;
+}
+.panel-footer {
+    color: #fff;
+    background: #333;
+    padding: 20px 0 30px;
+}
+#sidebar .search .form-group {
+    width: 100%;
+}
+
+#sidebar .search .form-group #filter_q0 {
+    width: 100%;
+}
+
+.nav-pills > li.disabled a, .nav-pills > li.disabled a:hover {
+    background: #ccc;
+    color: #aaa;
+}

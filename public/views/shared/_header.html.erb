@@ -1,0 +1,14 @@
+<section  id="header">
+  <div class="row">
+    <div class="col-md-2 col-sm-4 col-xs-4">
+      <a href="//lib.umd.edu" target="_blank"><img id="logo-header" class="img-responsive" width="170px" alt="University of Maryland Libraries Logo" src="<%= asset_url('/assets/images/liblogo.png') %>">    </a>
+    </div>
+    <div class="col-md-8 col-sm-8 col-xs-8">
+		  <% if request.original_fullpath == '/' %>
+        <span class="app-title"><%= t('brand.title') %></span>
+		  <% else %>
+        <a title="<%=t('brand.title_link_text') %>" href="<%= AppConfig[:public_proxy_url] %>" class="app-title"><%= t('brand.title') %></a>
+      <% end %>
+    </div>
+  </div>
+</section>

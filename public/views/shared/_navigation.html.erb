@@ -11,10 +11,12 @@
         <ul class="nav nav navbar-nav">
           <%# TODO: add class="active" if we're on that page %>
           <% $MAIN_MENU.each do |link| %>
-            <li><a href="<%= app_prefix(link[0]) %>"><%= t(link[1]) %></a></li>
+            <% uri = URI.parse(link[0]) %>
+            <% if uri.relative? %>
+              <% link[0] = app_prefix(link[0]) %>
+            <% end %>
+            <li><a href="<%= link[0] %>"><%= t(link[1]) %></a></li>
           <% end %>
-
-          <li><a href="https://www.lib.umd.edu/special/archivesspace"><%= I18n.t('help_tab') %></a></li>
 
           <% unless AppConfig[:pui_hide][:search_tab] %>
             <li>

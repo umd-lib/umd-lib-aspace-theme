@@ -4,9 +4,34 @@
 #header>.row {
     height: auto;
     border-bottom: 0;
-    padding:0 0 10px 0; 
+    padding:0 0 10px 0;
     margin:10px 10px 0 0;
 }
+
+#header .website-feedback-label {
+    padding:0 0 0 0;
+    margin:0 0 0 0;
+    font-size: 120%;
+}
+
+#header .website-feedback-link {
+    color: #004f6f;
+    font-size: 120%;
+}
+
+#header .website-feedback-link:hover {
+    color: #004f6f;
+    text-decoration: underline;
+}
+
+/* Custom pull-right that only occurs at medium or higher, see
+   https://stackoverflow.com/a/19405414 */
+@media (min-width: 992px) {
+    .pull-right-md {
+        float: right;
+    }
+}
+
 .panel-footer a,.panel-footer a:hover,.panel-footer a:active {
     color: #f0ad4e;
 }
@@ -15,7 +40,7 @@
 }
 .app-title{
     color: #000;
-    font-size: 34px;  
+    font-size: 34px;
 }
 .app-title, a:hover {
     color: #000;
@@ -27,12 +52,12 @@
     border-bottom: 1px solid #000;
 }
 h1, h2, h3, h4, h5, h6 {
-    color: #a40404;    
+    color: #a40404;
     margin-top: 5px;
-    text-shadow: none; 
-    font-weight: normal; 
+    text-shadow: none;
+    font-weight: normal;
     font-family: "Open Sans", Arial, sans-serif;
-} 
+}
 .panel-footer h2, .panel-footer h3, .panel-footer h4 {
     color: #fff;
     background: none;

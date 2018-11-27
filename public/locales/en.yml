@@ -6,7 +6,8 @@ en:
 
   actions:
     search_in: "Search Within %{type}"
-    hierarch: Collection Contents
+    hierarch: Finding Aid View
+    numeric: Box List
 
   repository:
     _singular: Library
@@ -58,6 +59,7 @@ en:
 
 
   external_docs: Inventories/Additional Information
+  cont_arr: Navigate the Collection
 
   all_agents: People
 

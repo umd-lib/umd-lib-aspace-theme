@@ -117,3 +117,16 @@ h1, h2, h3, h4, h5, h6 {
 .navbar-nav>li>form button {
     color: #004f6f;
 }
+
+.largetree-container .expandme > .glyphicon-chevron-right:before {
+    content: "\002b"
+}
+
+.largetree-container .expandme > .glyphicon-chevron-right.expanded:before {
+    content: "\2212"
+}
+
+.largetree-container .expandme-icon.expanded {
+    transform: none;
+    transition: none;
+}

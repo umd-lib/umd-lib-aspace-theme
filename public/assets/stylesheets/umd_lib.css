@@ -11,16 +11,9 @@
 #header .website-feedback-label {
     padding:0 0 0 0;
     margin:0 0 0 0;
-    font-size: 120%;
-}
-
-#header .website-feedback-link {
-    color: #004f6f;
-    font-size: 120%;
 }
 
 #header .website-feedback-link:hover {
-    color: #004f6f;
     text-decoration: underline;
 }
 

@@ -10,10 +10,10 @@
         <a title="<%=t('brand.title_link_text') %>" href="<%= AppConfig[:public_proxy_url] %>" class="app-title"><%= t('brand.title') %></a>
       <% end %>
     </div>
-    <div class="col-md-3 col-sm-3 col-xs-12">
+    <div class="col-md-4 col-sm-3 col-xs-12">
       <div class="pull-right-md website-feedback">
         <p class="website-feedback-label">Help us improve our website</p>
-        <a class="website-feedback-link" href="https://www.lib.umd.edu/special/contact/home">Send feedback</a>
+        <a class="website-feedback-link" href="<%= AppConfig[:website_feedback_url] %>">Send feedback</a>
       </div>
     </div>
   </div>

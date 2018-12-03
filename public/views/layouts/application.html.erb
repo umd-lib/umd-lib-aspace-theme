@@ -27,7 +27,7 @@
 	<% end %>
 </head>
 
-<body>
+<body class="site">
         <%= umd_lib_environment_banner %>
 	<%= render partial: 'shared/skipnav' %>
 
@@ -37,7 +37,7 @@
 
   <%= render partial: 'shared/navigation' %>
 
-	<section id="container-fluid" class="container">
+	<section id="container-fluid" class="container site-content">
 		<a name="maincontent" id="maincontent"></a>
 		<%= flash_messages %>
 		<%= yield %>

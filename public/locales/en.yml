@@ -70,3 +70,10 @@ en:
     _plural: People
 
   help_tab: Help
+
+  # UMD custom I18N keys
+  # The following are not ArchivesSpace standard keys
+
+  search:
+    header:
+      label: Find what you are looking for

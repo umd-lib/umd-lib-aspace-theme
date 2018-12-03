@@ -77,3 +77,6 @@ en:
   search:
     header:
       label: Find what you are looking for
+
+  collections:
+    request_instructions: Use the right side menu to identify relevant boxes and place requests.

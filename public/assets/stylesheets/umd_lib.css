@@ -13,10 +13,25 @@
     margin:0 0 0 0;
 }
 
+.website-feedback{
+	margin: 5px 0;
+}
+
 #header .website-feedback-link:hover {
     text-decoration: underline;
 }
 
+.navbar .navbar-header .navbar-toggle {
+	background: #fff;
+}
+.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+    border: none;
+}
+.navbar-toggle {
+	float: left;
+	padding: 8px 6px;
+	margin-left: 10px;
+}
 /* Custom pull-right that only occurs at medium or higher, see
    https://stackoverflow.com/a/19405414 */
 @media (min-width: 992px) {
@@ -44,7 +59,7 @@
     border: 1px solid #eee;
     background: #fff none repeat scroll 0 0;
 }
-p a, l a, div a, .app-title {
+p, a, l a, div a, .app-title {
     font-weight: 500;
 }
 .panel-footer a,.panel-footer a:hover,.panel-footer a:active {
@@ -68,14 +83,30 @@ p a, l a, div a, .app-title {
 }
 .navbar {
     position: relative;
-    min-height: 40px;
+    min-height: 35px;
     margin-bottom: 0;
 }
 .navbar-default .navbar-nav>li>a {
     color: #fff;
+    font-size: 13px !important;
 }
 .navbar-default .navbar-nav>li>a:hover {
     color: #f0ad4e;
+}
+.umd-search {
+ 	height: 24px;
+}
+.umd-search-btn {
+    background-color: #a40404;
+    border-color: #a40404;
+	padding-top: 2px;
+	height: 24px;
+	color: #fff;
+}
+.navbar-form {
+	margin: 3px 5px;
+	float: right;
+
 }
 h1, h2, h3, h4, h5, h6 {
     color: #a40404;
@@ -140,8 +171,8 @@ h1, h2, h3, h4, h5, h6 {
 /* Sticky footer */
 
 .site {
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
     height: 100vh;
     display: -webkit-box;
     display: -webkit-flex;
@@ -182,7 +213,16 @@ h1, h2, h3, h4, h5, h6 {
     color: #004f6f;
 }
 
+@media (max-width: 767px) {
+  #navigation.container {
+  margin-left: -1px;
+  margin-right: -1px;
+}
+}
 @media (min-width: 768px){
+.website-feedback {
+	float: right;
+}
 .navbar-nav>li>a {
     padding-top: 5px;
     padding-bottom: 5px;
@@ -192,9 +232,21 @@ h1, h2, h3, h4, h5, h6 {
 }
 }
 
+@media (min-width:480px){
+.visible-xxs{
+    display: none !important;
+}
+}
+
 @media (max-width: 479px){
 .app-title {
-    font-size: 24px;
+    font-size: 22px;
+}
+.hidden-xxs{
+    display: none !important;
+}
+.visible-xxs{
+    display: block !important;
 }
 }
 

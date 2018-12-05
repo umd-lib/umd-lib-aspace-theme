@@ -7,7 +7,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <div class="collapse navbar-collapse" id="collapsemenu">
+      <div class="collapse navbar-collapse pull-left" id="collapsemenu">
         <ul class="nav nav navbar-nav">
           <%# TODO: add class="active" if we're on that page %>
           <% $MAIN_MENU.each do |link| %>
@@ -17,7 +17,6 @@
             <% end %>
             <li><a href="<%= link[0] %>"><%= t(link[1]) %></a></li>
           <% end %>
-
           <% unless AppConfig[:pui_hide][:search_tab] %>
             <li>
               <%= link_to({:controller => :search, :action => :search, :reset => 'true'}, {:title => I18n.t('search_tab', :target => t('archive._plural'))}) do %>
@@ -26,24 +25,17 @@
               <% end %>
             </li>
           <% end %>
-          <% unless AppConfig[:pui_hide][:search_box_tab] %>
-            <li>
-              <%= form_tag(url_for(:controller => :search, :action => :search), :method => 'get', :class => 'navbar-form') do %>
-                <%= hidden_field_tag 'op[]' %>
-                <div class="input-group">
-                  <%= text_field_tag 'q[]', nil, :class => 'form-control', :placeholder => 'Search across our collections, digital materials, and more.' %>
-                  <span class="input-group-btn">
-                    <%= button_tag(type: "submit", class: "btn btn-default") do %>
-                      <span class="fa fa-search" aria-hidden="true"></span>
-                      <span class="sr-only"><%= I18n.t('search_tab', :target => t('archive._plural')) %></span>
-                    <% end %>
-                  </span>
-                </div>
-              <% end %>
-            </li>
-          <% end %>
         </ul>
       </div>
+      <% unless AppConfig[:pui_hide][:search_box_tab] %>
+        <div class="pull-right hidden-xxs">
+          <%# Using search_box_id to prevent search form from having duplicate HTML ids %>
+          <%= render partial: 'shared/navigation_search', locals: {search_box_id: '1'} %>
+        </div>
+        <div class="visible-xxs">
+          <%= render partial: 'shared/navigation_search', locals: {search_box_id: '2'} %>
+        </div>
+      <% end %>
     </div>
   </nav>
 </section>

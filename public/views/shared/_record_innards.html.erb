@@ -89,10 +89,10 @@
 	     :p_id => 'fa', :p_body => x} %>
 	<% end %>
 	<% unless @result.container_titles_and_uris.blank? %>
-	  <% x = render partial: 'shared/present_list', locals: {:list =>  @result.container_titles_and_uris, :list_clss => 'top_containers'} %>
-	  <%= render partial: 'shared/accordion_panel', locals: {:p_title =>  t('containers'), :p_id => 'cont_list',
-	    :p_body => x} %>
-  <% end %>
+	   <% x = render partial: 'shared/present_list', locals: {:list =>  @result.container_titles_and_uris, :list_clss => 'top_containers'} %>
+	 <%= render partial: 'shared/accordion_panel', locals: {:p_title =>  t('containers'), :p_id => 'cont_list',
+	 :p_body => x} %>
+        <% end %>
   <% if @result.kind_of?(DigitalObject) && !@result.linked_instances.blank? %>
     <% x = render partial: 'digital_objects/linked_instances', locals: {:instances => @result.linked_instances} %>
     <%= render partial: 'shared/accordion_panel', locals: {:p_title => t('linked_instances'), :p_id => 'linked_instances_list', :p_body => x} %>

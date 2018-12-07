@@ -59,11 +59,31 @@
     border: 1px solid #eee;
     background: #fff none repeat scroll 0 0;
 }
+.searchstatement{
+	padding: 5px 5px 5px 10px;
+}
+.filter_more{
+	margin-bottom: 10px;
+}
+.form-group{
+	margin-bottom: 10px;
+}
+.pagination > li > a, .pagination > li > span{
+	margin-left: -2px;
+}
+.record-type-badge, .inline-label{
+	padding: 5px 5px 5px 1px;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.sorter{
+	margin-bottom: 10px;
+}
 p, a, l a, div a, .app-title {
     font-weight: 500;
 }
 .panel-footer a,.panel-footer a:hover,.panel-footer a:active {
     color: #f0ad4e;
+	font-weight: 500;
 }
 .panel-footer a:hover {
     text-decoration: underline;

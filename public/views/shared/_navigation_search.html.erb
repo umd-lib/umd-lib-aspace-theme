@@ -1,4 +1,4 @@
-<%= form_tag(url_for(:controller => :search, :action => :search), :method => 'get', :class => 'navbar-form') do %>
+<%= form_tag(app_prefix('/search'), :method => 'get', :class => 'navbar-form') do %>
   <%# Using local parameter "search_box_id" to prevent search form from having duplicate HTML ids %>
   <%= hidden_field_tag 'op[]', nil, id: "op_#{search_box_id}" %>
   <div class="input-group">

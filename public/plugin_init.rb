@@ -10,3 +10,10 @@ Rails.application.config.after_initialize do
     end
   end
 end
+
+# Addition to navigation main menu
+Plugins::add_menu_item('/', 'brand.home', 0)
+Plugins::add_menu_item('https://www.lib.umd.edu/special/archivesspace', 'help_tab')
+
+# URL for website feedback
+AppConfig[:website_feedback_url] = 'https://libumd.wufoo.com/forms/rb2fewh0i9d7bc/'

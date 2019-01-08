@@ -13,7 +13,7 @@
     <% end %>
 
     <% unless @result.dates.blank? %>
-      <h4><%= t('resource._public.dates') %></h4>
+      <h3><%= t('resource._public.dates') %></h3>
       <%= render partial: 'shared/dates', locals: {:dates => @result.dates} %>
     <% end %>
 
@@ -32,7 +32,7 @@
     <% end %>
 
     <% unless @result.extents.blank? %>
-      <h4><%= t('resource._public.extent') %></h4>
+      <h3><%= t('resource._public.extent') %></h3>
        <% @result.extents.each do |ext| %>
         <p class="extent"><%= inheritance(ext['_inherited']).html_safe %>
 	  <%= ext['display']%>
@@ -40,7 +40,7 @@
       <% end %>
     <% end %>
     <% if @result.is_a?(Accession) && @result.inventory %>
-      <h4><%= t('accession._public.section.inventory') %></h4>
+      <h3><%= t('accession._public.section.inventory') %></h3>
       <p><%= @result.inventory %></p>
     <% end %>
 
@@ -51,6 +51,10 @@
 
     <div class="acc_holder clear" >
       <div class="panel-group" id="res_accordion">
+        <% unless @result.external_documents.blank? %>
+         <% x = render partial: 'shared/present_list_external_docs', locals: {:list =>  @result.external_documents, :list_clss => 'external_docs'} %>
+         <%= render partial: 'shared/accordion_panel', locals: {:p_title => t('external_docs'), :p_id => 'ext_doc_list', :p_body => x} %>
+        <% end %>
 	<% x = render partial: 'shared/multi_notes', locals: {:types => folder} %>
 	<% unless x.blank? %>
 	<%= render partial: 'shared/accordion_panel', locals: {:p_title =>  t('resource._public.additional'),
@@ -93,10 +97,6 @@
     <% x = render partial: 'digital_objects/linked_instances', locals: {:instances => @result.linked_instances} %>
     <%= render partial: 'shared/accordion_panel', locals: {:p_title => t('linked_instances'), :p_id => 'linked_instances_list', :p_body => x} %>
   <% end %>
-	<% unless @result.external_documents.blank? %>
-	 <% x = render partial: 'shared/present_list_external_docs', locals: {:list =>  @result.external_documents, :list_clss => 'external_docs'} %>
-	  <%= render partial: 'shared/accordion_panel', locals: {:p_title => t('external_docs'), :p_id => 'ext_doc_list', :p_body => x} %>
-	<% end %>
 	<% unless @repo_info.blank? || @repo_info['top']['name'].blank? %>
            <% x= render partial: 'repositories/repository_details' %>
 	    <%= render partial: 'shared/accordion_panel', locals: {:p_title =>  t('repository.details'),

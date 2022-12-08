@@ -47,30 +47,8 @@ string, i.e. "foo-dev.example.com", "foo-dev", and "dev" all match for
 
 ## Running the Tests
 
-The ArchivesSpace build script does not appear to be correctly configured to
-run unit tests in the "plugins" directory.
+The ArchivesSpace plugin test runner can be used to run the tests:
 
-To enable ArchivesSpace to run the tests:
-
-1) Edit the "build/build.xml" file, changing the "plugin:frontend:test" by
-adding/changing the following lines:
-
-```
-  <target name="plugin:frontend:test" depends="set-classpath" description="Run the unit test suite">
-    ...
-    <dirset id="plugins" dir="../plugins">
-      ...
-    </dirset>
-    <pathconvert pathsep=" " property="plugin-spec-dirs" refid="plugins"/>
-    <java classpath="${jruby_classpath}" classname="org.jruby.Main" fork="true"
-      ...
-      <arg line="../build/gems/bin/rspec -b --format d -P '*_spec.rb' --order rand:1 ${example-arg} spec/${spec} ${plugin-spec-dirs}" />
-    </java>
-  </target>
-```
-
-2) The tests can then be run using the following command:
-
-```
-> build/run plugin:frontend:test
+```bash
+$ build/run frontend:test:plugin
 ```

@@ -40,7 +40,15 @@
       <%= label_tag(:"to_year#{i}", "#{t('search_results.filter.to_year')}", :class=> 'sr-only repeats') %>
       <%= text_field_tag('to_year[]', @search[:to_year][i], :size => 4, :maxlength => 4, :id => "to_year#{i}",
                :class=> 'form-control repeats', :placeholder => t('search_results.filter.to')) %>
+    <%# LIBASPACE-341: Commenting out the "+" button for adding additional
+         search criteria, which is not working as of ArchivesSpace v3.1.1.
+         To restore this functionality, this entire template should be replaced
+         the latest ArchivesSpace version from
+         "public/app/views/shared/_search.html.erb" (preserving UMD
+         customizations), but doing so causes problem with the form layout due
+         to other UMD customizations of the application.
     <span class="plusminus"></span>
+    %>
 
     </div>
   </div>

@@ -2,9 +2,37 @@
 
 ArchivesSpace plugin for UMD Libraries theme elements
 
+## Web Analytics
+
+Web analytics trackers have been integrated into the page application layout.
+
+Each tracker is activated by specifying the appropriate paramters in the
+ArchivesSpace "AppConfig" object, for retrieval in the ERB templates.
+
+The parameters are optional, in that if they are not provided the
+corresponding tracker will not be added to the layout.
+
+### Fathom Analytics
+
+* `AppConfig[:fathom_analytics_data_site]` - The Fathom "data-site" value
+
+### Google Analytics
+
+* `AppConfig[:public_google_analytics_code]` - The Google Analytics tracking code
+
+### Matomo Analytics
+
+* `AppConfig[:matomo_analytics_url]` - The Matomo URL for the site
+* `AppConfig[:matomo_analytics_site_id]` - The Matomo site id
+
+### Plausible.io Analytics
+
+* `AppConfig[:plausible_io_analytics_data_domain]` - The Plausible.io
+  "data-domain" value.
+
 ## Environment Banner
 
-Per the SSDR policy specified in https://confluence.umd.edu/display/LIB/Create+Environment+Banners
+Per the SSDR policy specified in <https://confluence.umd.edu/display/LIB/Create+Environment+Banners>
 an environment banner should be shown on all non-production systems.
 
 The display of the environment banner is handled by the

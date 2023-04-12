@@ -50,6 +50,26 @@
     <script src="https://cdn.usefathom.com/script.js" data-site="<%= fathom_analytics_data_site %>" defer></script>
   <% end %>
 
+  <% matomo_analytics_url = AppConfig[:matomo_analytics_url] if AppConfig.has_key?(:matomo_analytics_url) %>
+  <% matomo_analytics_site_id = AppConfig[:matomo_analytics_site_id] if AppConfig.has_key?(:matomo_analytics_site_id) %>
+  <% unless (matomo_analytics_url.nil? || matomo_analytics_url.empty? ||  matomo_analytics_site_id.nil? || matomo_analytics_site_id.empty?) %>
+    <!-- Matomo Analytics -->
+    <script>
+      var _paq = window._paq = window._paq || [];
+      /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+      _paq.push(['trackPageView']);
+      _paq.push(['enableLinkTracking']);
+      (function() {
+        var u="<%= matomo_analytics_url %>";
+        _paq.push(['setTrackerUrl', u+'matomo.php']);
+        _paq.push(['setSiteId', '<%= matomo_analytics_site_id %>']);
+        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+        g.async=true; g.src='//cdn.matomo.cloud/umd.matomo.cloud/matomo.js'; s.parentNode.insertBefore(g,s);
+      })();
+    </script>
+  <% end %>
+
+
 </head>
 
 <body class="site">

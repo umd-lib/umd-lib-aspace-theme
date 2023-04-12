@@ -12,18 +12,23 @@ ArchivesSpace "AppConfig" object, for retrieval in the ERB templates.
 The parameters are optional, in that if they are not provided the
 corresponding tracker will not be added to the layout.
 
+### Fathom Analytics
+
+* `AppConfig[:fathom_analytics_data_site]` - The Fathom "data-site" value
+
 ### Google Analytics
 
 * `AppConfig[:public_google_analytics_code]` - The Google Analytics tracking code
+
+### Matomo Analytics
+
+* `AppConfig[:matomo_analytics_url]` - The Matomo URL for the site
+* `AppConfig[:matomo_analytics_site_id]` - The Matomo site id
 
 ### Plausible.io Analytics
 
 * `AppConfig[:plausible_io_analytics_data_domain]` - The Plausible.io
   "data-domain" value.
-
-### Fathom Analytics
-
-* `AppConfig[:fathom_analytics_data_site]` - The Fathom "data-site" value
 
 ## Environment Banner
 

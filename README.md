@@ -21,6 +21,10 @@ corresponding tracker will not be added to the layout.
 * `AppConfig[:plausible_io_analytics_data_domain]` - The Plausible.io
   "data-domain" value.
 
+### Fathom Analytics
+
+* `AppConfig[:fathom_analytics_data_site]` - The Fathom "data-site" value
+
 ## Environment Banner
 
 Per the SSDR policy specified in <https://confluence.umd.edu/display/LIB/Create+Environment+Banners>

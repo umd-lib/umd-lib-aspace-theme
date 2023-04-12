@@ -43,6 +43,13 @@
     <!-- Plausible.io Analytics -->
     <script defer data-domain="<%= plausible_io_analytics_data_domain %>" src="https://plausible.io/js/script.js"></script>
   <% end %>
+
+  <% fathom_analytics_data_site = AppConfig[:fathom_analytics_data_site] if AppConfig.has_key?(:fathom_analytics_data_site) %>
+  <% unless (fathom_analytics_data_site.nil? || fathom_analytics_data_site.empty?) %>
+    <!-- Fathom Analytics -->
+    <script src="https://cdn.usefathom.com/script.js" data-site="<%= fathom_analytics_data_site %>" defer></script>
+  <% end %>
+
 </head>
 
 <body class="site">

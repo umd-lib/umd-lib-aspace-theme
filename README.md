@@ -4,20 +4,12 @@ ArchivesSpace plugin for UMD Libraries theme elements
 
 ## Web Analytics
 
-The following Web analytics trackers have been integrated into the
-default page layout.
+The Matomo Web analytics tracker has been integrated into the default page
+layout.
 
-Each tracker is activated by specifying the appropriate parameters in the
+The tracker is activated by specifying the following parameters in the
 ArchivesSpace "AppConfig" object, for retrieval in the ERB templates.
-
-The parameters are optional, in that if they are not provided the
-corresponding tracker will not be added to the layout.
-
-### Google Analytics
-
-* `AppConfig[:public_google_analytics_code]` - The Google Analytics tracking code
-
-### Matomo Analytics
+If they are not provided the tracker will not be added to the layout.
 
 * `AppConfig[:matomo_analytics_url]` - The Matomo URL for the site
 * `AppConfig[:matomo_analytics_site_id]` - The Matomo site id

@@ -28,7 +28,7 @@ customizations.
 | public/views/shared/_navigation.html.erb     | Navbar Links, Navbar Search |
 | public/views/shared/_only_facets.html.erb    | Search Facets |
 | public/views/shared/_record_innards.html.erb | Field Reordering, Inventories Display |
-| public/views/shared/_result.html.erb         | Found In Reordering |
+| public/views/shared/_result_record_summary.html.erb | Found In Reordering |
 | public/views/shared/_search.html.erb         | Search Box Image, Search Stop-gap |
 
 ## Functionality

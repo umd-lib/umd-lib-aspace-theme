@@ -2,6 +2,11 @@
 
 ArchivesSpace plugin for UMD Libraries theme elements
 
+## UMD Customizations
+
+* [Staff ("frontend") interface](docs/StaffInterfaceCustomizations.md)
+* [Public interface](docs/PublicInterfaceCustomizations.md)
+
 ## Web Analytics
 
 The Matomo Web analytics tracker has been integrated into the default page

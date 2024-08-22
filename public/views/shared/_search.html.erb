@@ -1,16 +1,21 @@
 <%
   show_header = true if show_header.nil?
+  # UMD Customization
   header_size = '1' if header_size.nil?
+  # End UMD Customization
 %>
 <div class="search" role="search">
   <a name="search" id="search"></a>
   <% if show_header %>
+  <%# UMD Customization %>
   <h<%= header_size %>><%= t('search.header.label') %> </h<%= header_size %>>
+  <%# End UMD Customization %>
   <% end %>
   <% @search = Search.new unless defined?(@search) %>
   <%= form_tag(app_prefix("#{search_url}"), method: 'get', :id => 'advanced_search') do %>
   <% (0...[1, @search.q.length].max).each do |i| %>
   <div class="row search_row" id="search_row_<%= i %>">
+    <%# UMD Customization %>
     <div class="col-sm-1 bool form-group form-inline">
       <%= label_tag("op#{i}", t('advanced_search.operator_label'), :class => 'sr-only') %>
       <%= select_tag('op[]', options_for_select(Search.get_boolean_opts, @search[:op][i]), disabled: (i == 0), :id => "op#{i}",:class=> 'form-control' + (i == 0 ? ' hidden' : '')) %>
@@ -51,6 +56,7 @@
     %>
 
     </div>
+    <%# End UMD Customization %>
   </div>
   <% end %>
   <div class="row" id="submit_div">

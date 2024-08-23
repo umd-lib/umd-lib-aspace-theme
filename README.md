@@ -10,8 +10,8 @@ delineated by comments `UMD Customization` / `End UMD Customization`.
 
 Customizations are described in:
 
-* [Staff ("frontend") interface](docs/StaffInterfaceCustomizations.md)
-* [Public interface](docs/PublicInterfaceCustomizations.md)
+* [ArchivesSpace Customizations - Staff Interface](docs/StaffInterfaceCustomizations.md)
+* [ArchivesSpace Customizations - Public Interface](docs/PublicInterfaceCustomizations.md)
 
 ## Web Analytics
 

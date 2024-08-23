@@ -1,4 +1,4 @@
-# Public Interface Customizations
+# ArchivesSpace Customizations - Public Interface
 
 ## Introduction
 
@@ -109,9 +109,9 @@ of the collection page.
 Local development: In the staff interface, edit the
 "Archives of the Atlantic Monthly" entry, and add an "External Documents" entry.
 
-Then in the public interface, verify that a collapsed
+Then in the public interface, verify that an
 "Inventories/Additional Information" panel is shown in the collection page,
-at the top of the other collapsed sections.
+at the top of the other sections.
 
 ### Library Details Fix
 
@@ -130,7 +130,7 @@ additional "Library".
 
 For example, for a collection in the "Michelle Smith Performing Arts Library",
 the text should be "Part of the Michelle Smith Performing Arts Library", *not*
-"Michelle Smith Performing Arts Library Library".
+"Part of the Michelle Smith Performing Arts Library Library".
 
 ### Matomo Analyics
 
@@ -181,13 +181,6 @@ glass icon to the right.
 
 * On a collections page, verify that a blue banner with the text
   "Use the right side menu to identify relevant boxes and place requests."
-  is displayed.
-
-* Select one of the items in the collection, such that the Aeon "Request Box 1"
-  button is shown. Left-click the "Request Box 1" button, and on the resulting
-  page verify that a blue banner with the text
-  "Click button below to request this box. You will be asked to register/sign in
-  to your Special Collections Research Account to complete your request."
   is displayed.
 
 ### Resource Ids

@@ -25,7 +25,7 @@ customizations.
 | File                                         | Functionality      |
 | -------------------------------------------- | ------------------ |
 | frontend/views/layouts/application.html.erb  | Environment Banner |
-| frontend/views/site/_branding.html.erb       | Navbar Branding    |
+| frontend/views/site/_branding.html.erb       | Header Branding    |
 | frontend/views/site/_footer.html.erb         | Custom Footer      |
 
 ## Functionality
@@ -46,8 +46,9 @@ non-production web applications.
 To verify, run ArchivesSpace on a non-production system (local, test, or qa),
 and verify that an environment banner is shown.
 
-### Navbar Branding
+### Header Branding
 
 **Jira Issue(s):** LIBASPACE-42
 
-Verify that the UMD Libaries logo appears in the navigation bar
+Verify that the UMD Libraries logo and the text "ArchivesSpace" appears in the
+header.

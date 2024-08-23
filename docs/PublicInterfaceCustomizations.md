@@ -70,7 +70,7 @@ and verify that an environment banner is shown.
 
 In the "accessions", "objects", and "resources" views, flipped the precedence
 of the test in the "Overview" section to make the "abstract" text the default,
-with the "scopecontext" text as the fallback.
+with the "scopecontent" text as the fallback.
 
 **Verification:**
 
@@ -80,7 +80,7 @@ Local development: On the "Archives of the Atlantic Monthly" entry verify that
 the text immediately under the "Collection Overview" tab displays the text
 "The Atlantic Monthly Press was founded in 1917...", (which is from the
 abstract), and not "The archives of Atlantic Monthly Press...", which is the
-text from the "scopecontext").
+text from the "scopecontent").
 
 ### Found In Reordering
 

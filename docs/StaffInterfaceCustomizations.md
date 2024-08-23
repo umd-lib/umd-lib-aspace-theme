@@ -5,6 +5,12 @@
 This document describes the UMD customizations made to the ArchivesSpace
 staff ("frontend") interface.
 
+## I18n Customizations
+
+Customizations to internationalization (I18n) values for the staff interface are
+in the "frontend/locales/en.yml" file. Only modified values are included in the
+file.
+
 ## Overridden ArchivesSpace Files
 
 The following stock ArchivesSpace files have been overridden to support UMD

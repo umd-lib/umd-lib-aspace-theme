@@ -1,8 +1,14 @@
 # umd-lib-aspace-theme
 
-ArchivesSpace plugin for UMD Libraries theme elements
+ArchivesSpace plugin for UMD Libraries theme elements, and customizations to
+stock ArchivesSpace files.
 
 ## UMD Customizations
+
+Sections modified by UMD customizations in overridden ArchivesSpace files, are
+delineated by comments `UMD Customization` / `End UMD Customization`.
+
+Customizations are described in:
 
 * [Staff ("frontend") interface](docs/StaffInterfaceCustomizations.md)
 * [Public interface](docs/PublicInterfaceCustomizations.md)

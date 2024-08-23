@@ -5,6 +5,12 @@
 This document describes the UMD customizations made to the ArchivesSpace
 public ("public") interface.
 
+## I18n Customizations
+
+Customizations to internationalization (I18n) values for the public interface
+are in the "public/locales/en.yml" file. Only modified values (or new values
+needed by UMD customizations) are included in the file.
+
 ## Overridden ArchivesSpace Files
 
 The following stock ArchivesSpace files have been overridden to support UMD

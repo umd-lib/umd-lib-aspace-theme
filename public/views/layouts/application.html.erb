@@ -1,27 +1,28 @@
 <!DOCTYPE html>
 <html lang="<%= AppConfig[:locale] %>">
 <head>
-	<%#mdc: new stuff, to address IE 10 and earlier issues with Bootstrap %>
+	<%# mdc: new stuff, to address IE 10 and earlier issues with Bootstrap %>
 	<meta charset="utf-8"/>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-
+	<link href="<%= asset_path('favicon.ico') %>" rel="shortcut icon" type="image/x-icon" />
 	<title><%=  (@page_title.blank? ? '' : "#{strip_mixed_content(@page_title)} | ") %><%= t('brand.title') %></title>
 	<%= csrf_meta_tags %>
-<%# block cross-origin refer per https://go-to-hellman.blogspot.com/2015/06/protect-reader-privacy-with-referrer.html %>
+
+	<%# block cross-origin refer per https://go-to-hellman.blogspot.com/2015/06/protect-reader-privacy-with-referrer.html %>
 	<% if AppConfig[:pui_block_referrer] %>
 		<meta name="referrer" content="origin-when-cross-origin" />
 	<% end %>
 
-
 	<script>
 	 var APP_PATH = '<%= PrefixHelper.app_prefix("") %>';
+	 var SHOW_IDENTIFIERS_IN_TREE = <%= AppConfig[:pui_display_identifiers_in_resource_tree] %>;
 	</script>
 
 	<%= stylesheet_link_tag    'application', media: 'all' %>
 	<%= javascript_include_tag 'application' %>
 
-        <%= render partial: 'shared/metadata' %>
+	<%= render partial: 'shared/metadata' %>
 
 	<% ASUtils.find_local_directories('public/views/layout_head.html.erb').each do |template| %>
 		<% if File.exists?(template) %>
@@ -31,13 +32,13 @@
 		<% end %>
 	<% end %>
 
-	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 <!--[if lt IE 9]>
 	<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
-
+  <%# UMD Customization %>
   <% matomo_analytics_url = AppConfig[:matomo_analytics_url] if AppConfig.has_key?(:matomo_analytics_url) %>
   <% matomo_analytics_site_id = AppConfig[:matomo_analytics_site_id] if AppConfig.has_key?(:matomo_analytics_site_id) %>
   <% unless (matomo_analytics_url.nil? || matomo_analytics_url.empty? ||  matomo_analytics_site_id.nil? || matomo_analytics_site_id.empty?) %>
@@ -56,13 +57,25 @@
       })();
     </script>
   <% end %>
-
+  <%# End UMD Customization %>
 </head>
 
+<%# UMD Customization %>
 <body class="site">
-        <%= umd_lib_environment_banner %>
+  <%= umd_lib_environment_banner %>
+<%# End UMD Customization %>
+
+	<% ASUtils.find_local_directories('public/views/body_top.html.erb').each do |template| %>
+		<% if File.exists?(template) %>
+			<!-- Begin plugin layout -->
+			<%= render :file => template %>
+			<!-- End plugin layout -->
+		<% end %>
+	<% end %>
+
 	<%= render partial: 'shared/skipnav' %>
 
+	<%# UMD Customization %>
 	<div class="container-fluid no-pad container">
 		<%= render partial: 'shared/header' %>
 	</div>
@@ -70,6 +83,7 @@
   <%= render partial: 'shared/navigation' %>
 
 	<section id="container-fluid" class="container site-content">
+	<%# End UMD Customization %>
 		<a name="maincontent" id="maincontent"></a>
 		<%= flash_messages %>
 		<%= yield %>
@@ -86,12 +100,14 @@
 			<script>
 				FRONTEND_URL = "<%= j(AppConfig[:frontend_proxy_url]) %>";
 				RECORD_URI = "<%= j(@result.uri) %>";
+				STAFF_LINK_MODE = "<%= j(AppConfig[:pui_staff_link_mode]) %>";
 			</script>
 		<% end %>
 	<% end %>
 
-  <!-- UMD Wrapper -->
-  <script src="https://umd-header.umd.edu/build/bundle.js?search=0&amp;search_domain=&amp;events=0&amp;news=0&amp;schools=0&amp;admissions=0&amp;support=1&amp;support_url=https%253A%252F%252Fgiving.umd.edu%252Fgiving%252FshowSchool.php%253Fname%253Dlibraries&amp;wrapper=1160&amp;sticky=0"></script>
-
+	<%# UMD Customization %>
+	<!-- UMD Wrapper -->
+	<script src="https://umd-header.umd.edu/build/bundle.js?search=0&amp;search_domain=&amp;events=0&amp;news=0&amp;schools=0&amp;admissions=0&amp;support=1&amp;support_url=https%253A%252F%252Fgiving.umd.edu%252Fgiving%252FshowSchool.php%253Fname%253Dlibraries&amp;wrapper=1160&amp;sticky=0"></script>
+	<%# End UMD Customization %>
 </body>
 </html>

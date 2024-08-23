@@ -25,6 +25,7 @@
     APP_PATH = "<%= j(AppConfig[:frontend_proxy_prefix]) %>";
     COOKIE_PREFIX = "<%= j(AppConfig[:cookie_prefix]) %>";
     FRONTEND_URL = "<%= j(AppConfig[:frontend_proxy_url]) %>";
+    SHOW_IDENTIFIERS_IN_TREE = <%= AppConfig[:display_identifiers_in_largetree_container] %>;
   </script>
 
   <%= javascript_include_tag "application" %>
@@ -34,7 +35,7 @@
   <%= javascript_include_tag "html5shiv" %>
   <![endif]-->
 
-  <% ASUtils.find_local_directories('frontend/views/layout_head.html.erb').each do |layout| %>
+  <% ASUtils.order_plugins(ASUtils.find_local_directories('frontend/views/layout_head.html.erb')).each do |layout| %>
     <% if File.exist?(layout) %>
       <!-- Begin plugin layout -->
       <%= render :file => layout %>
@@ -44,7 +45,9 @@
 </head>
 <body data-spy="scroll" data-target="#archivesSpaceSidebar" data-offset="20" class="action-<%= controller.action_name %>">
 
+  <%# UMD Customization %>
   <%= umd_lib_environment_banner %>
+  <%# End UMD Customization %>
   <div class="container-fluid center-block">
     <header>
       <%= render "shared/header_global" %>

@@ -1,3 +1,5 @@
-<h2><%= t('repository.details') %></h2>
+<h3><%= t('repository.details') %></h3>
+<%# UMD Customization %>
 <p> <%= "#{t('repository.part')} #{@repo_info['top']['name']}" %></p>
+<%# End UMD Customization %>
 <%= render partial: 'repositories/full_repo', locals: {:info => @repo_info, :url => @repo_info['top']['url']} %>

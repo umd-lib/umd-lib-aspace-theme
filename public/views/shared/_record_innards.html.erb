@@ -10,7 +10,7 @@
 
     end %>
     <% unless over.blank? %>
-      <%= render partial: 'shared/single_note', locals: {:type => 'abstract', :note_struct => over, :notitle => true} %>
+      <%= render partial: 'shared/single_note', locals: {:type => 'abstract', :note_struct => over, :calling_partial => 'record_innards'} %>
     <% end %>
 <%# End UMD Customization %>
 
@@ -26,17 +26,20 @@
     <% non_folder.each do |type| %>
       <% (@result.notes[type] || []).each do |note_struct| %>
        <% unless note_struct['note_text'].blank? %>
-        <%= render partial: 'shared/single_note', locals: {:type => type, :note_struct => note_struct}   %>
+        <%= render partial: 'shared/single_note', locals: {:type => type, :note_struct => note_struct, :calling_partial => 'record_innards'} %>
        <% end %>
       <% end %>
     <% end %>
 
     <% unless @result.extents.blank? %>
-      <h2><%= t('resource._public.extent') %></h2>
-       <% @result.extents.each do |ext| %>
-        <p class="extent"><%= inheritance(ext['_inherited']).html_safe %>
-	  <%= ext['display']%>
-	</p>
+      <% @result.extents.each do |ext| %>
+        <h2>
+          <%= ext['portion'] == 'whole' ? t('resource._public.extent_full') : t('resource._public.extent_partial') %>
+        </h2>
+        <p class="extent">
+          <%= inheritance(ext['_inherited']).html_safe %>
+          <%= ext['display'] %>
+        </p>
       <% end %>
     <% end %>
 
@@ -57,12 +60,12 @@
     <% end %>
 
     <% ASUtils.find_local_directories('public/views/_upper_record_innards.html.erb').each do |template| %>
-      <%= render :file => template if File.exists?(template) %>
+      <%= render :template => ViewHelper.relative_plugin_view_path(template) if File.exists?(template) %>
     <% end %>
 </div>
 
-    <div class="acc_holder clear" >
-      <div class="panel-group" id="res_accordion">
+    <div class="acc_holder clear-both">
+      <div id="res_accordion" class="accordion">
         <%# UMD Customization %>
         <% unless @result.external_documents.blank? %>
          <% x = render partial: 'shared/present_list_external_docs', locals: {:list =>  @result.external_documents, :list_clss => 'external_docs'} %>
@@ -140,7 +143,7 @@
 	<% unless @repo_info.blank? || @repo_info['top']['name'].blank? %>
            <% x= render partial: 'repositories/repository_details' %>
 	    <%= render partial: 'shared/accordion_panel', locals: {:p_title =>  t('repository.details'),
-	    :p_id => 'repo_deets', :p_body => x} %>
+	    :p_id => 'repo_details', :p_body => x} %>
         <% end %>
         <% if @result.kind_of?(Resource) && !@result.related_accessions.blank? %>
           <% x = render partial: 'resources/related_accessions', locals: {:accessions => @result.related_accessions} %>
@@ -156,7 +159,7 @@
         <% end %>
       </div>
       <% ASUtils.find_local_directories('public/views/_lower_record_innards.html.erb').each do |template| %>
-        <%= render :file => template if File.exists?(template) %>
+        <%= render :template => ViewHelper.relative_plugin_view_path(template) if File.exists?(template) %>
       <% end %>
     </div>
     <script type="text/javascript" >initialize_accordion(".note_panel", "<%= t('accordion.expand') %>" , "<%= t('accordion.collapse') %>", <%= AppConfig[:pui_expand_all] %>);

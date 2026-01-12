@@ -26,11 +26,13 @@
 }
 .navbar-default .navbar-collapse, .navbar-default .navbar-form {
     border: none;
+    flex-basis: auto;
 }
 .navbar-toggle {
 	float: left;
 	padding: 8px 6px;
 	margin-left: 10px;
+    font-size: .875rem;
 }
 /* Custom pull-right that only occurs at medium or higher, see
    https://stackoverflow.com/a/19405414 */
@@ -105,13 +107,14 @@ p, a, l a, div a, .app-title {
     position: relative;
     min-height: 35px;
     margin-bottom: 0;
+    vertical-align: middle;
 }
-.navbar-default .navbar-nav>li>a {
-    color: #fff;
+.navbar-default .navbar-nav>li>a.nav-link {
+    color: #fff !important;
     font-size: 13px !important;
 }
-.navbar-default .navbar-nav>li>a:hover {
-    color: #f0ad4e;
+.navbar-default .navbar-nav>li>a.nav-link:hover {
+    color: #f0ad4e !important;
 }
 .umd-search {
  	height: 24px;
@@ -191,6 +194,7 @@ h1, h2, h3, h4, h5, h6 {
 /* Sticky footer */
 
 .site {
+    font-size: .875rem;
     display: flex;
     flex-direction: column;
     height: 100vh;
@@ -217,6 +221,16 @@ h1, h2, h3, h4, h5, h6 {
 }
 }
 
+.search .form-control {
+    font-size: .875rem;
+}
+
+#submit_search {
+    background-color: #a40404;
+    border-color: #a40404;
+    font-size: .875rem;
+}
+
 #sidebar .search .form-group {
     width: 100%;
 }
@@ -226,20 +240,20 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .nav-pills > li.disabled a, .nav-pills > li.disabled a:hover {
-    background: #ccc;
-    color: #aaa;
+    background: #ccc !important;
+    color: #aaa !important;
 }
 .navbar-nav>li>form button {
     color: #004f6f;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 576px) {
   #navigation.container {
   margin-left: -1px;
   margin-right: -1px;
 }
 }
-@media (min-width: 768px){
+@media (min-width: 576px){
 .website-feedback {
 	float: right;
 }
@@ -252,21 +266,15 @@ h1, h2, h3, h4, h5, h6 {
 }
 }
 
-@media (min-width:480px){
-.visible-xxs{
-    display: none !important;
-}
+@media (max-width: 767.98px) {
+  .container {
+    max-width: 100% !important;
+  }
 }
 
 @media (max-width: 479px){
 .app-title {
     font-size: 22px;
-}
-.hidden-xxs{
-    display: none !important;
-}
-.visible-xxs{
-    display: block !important;
 }
 }
 

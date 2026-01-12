@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="<%= AppConfig[:locale] %>">
+<html lang="<%= session[:locale] ? session[:locale] : AppConfig[:locale] %>">
 <head>
 	<%# mdc: new stuff, to address IE 10 and earlier issues with Bootstrap %>
 	<meta charset="utf-8"/>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link href="<%= asset_path('favicon.ico') %>" rel="shortcut icon" type="image/x-icon" />
+	<% if AppConfig[:pui_show_favicon] %><%= render "shared/favicon" %><% end %>
 	<title><%=  (@page_title.blank? ? '' : "#{strip_mixed_content(@page_title)} | ") %><%= t('brand.title') %></title>
 	<%= csrf_meta_tags %>
 
@@ -19,17 +19,15 @@
 	 var SHOW_IDENTIFIERS_IN_TREE = <%= AppConfig[:pui_display_identifiers_in_resource_tree] %>;
 	</script>
 
-	<%= stylesheet_link_tag    'application', media: 'all' %>
-	<%= javascript_include_tag 'application' %>
+	<%= stylesheet_link_tag    'application.css', media: 'all' %>
+	<%= javascript_include_tag 'application.js' %>
 
 	<%= render partial: 'shared/metadata' %>
 
 	<% ASUtils.find_local_directories('public/views/layout_head.html.erb').each do |template| %>
-		<% if File.exists?(template) %>
-			<!-- Begin plugin layout -->
-			<%= render :file => template %>
-			<!-- End plugin layout -->
-		<% end %>
+		<!-- Begin plugin layout -->
+		<%= render :template => ViewHelper.relative_plugin_view_path(template) if File.exists?(template) %>
+		<!-- End plugin layout -->
 	<% end %>
 
 <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -60,17 +58,15 @@
   <%# End UMD Customization %>
 </head>
 
-<%# UMD Customization %>
-<body class="site">
+  <%# UMD Customization %>
+  <body class="site">
   <%= umd_lib_environment_banner %>
-<%# End UMD Customization %>
+  <%# End UMD Customization %>
 
 	<% ASUtils.find_local_directories('public/views/body_top.html.erb').each do |template| %>
-		<% if File.exists?(template) %>
-			<!-- Begin plugin layout -->
-			<%= render :file => template %>
-			<!-- End plugin layout -->
-		<% end %>
+		<!-- Begin plugin layout -->
+		<%= render :template => ViewHelper.relative_plugin_view_path(template) if File.exists?(template) %>
+		<!-- End plugin layout -->
 	<% end %>
 
 	<%= render partial: 'shared/skipnav' %>
@@ -80,18 +76,13 @@
 		<%= render partial: 'shared/header' %>
 	</div>
 
-  <%= render partial: 'shared/navigation' %>
-
+	<%= render partial: 'shared/navigation' %>
 	<section id="container-fluid" class="container site-content">
 	<%# End UMD Customization %>
 		<a name="maincontent" id="maincontent"></a>
 		<%= flash_messages %>
 		<%= yield %>
 	</section>
-
-	<script  type="text/javascript" >
-		$(".upper-record-details .note-content").each(function(index, element){$(this).readmore(<%= AppConfig[:pui_readmore_max_characters] %>)});
-	</script>
 
 	<%= render partial: 'shared/footer' %>
 

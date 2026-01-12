@@ -1,17 +1,17 @@
 <section id="header">
   <div class="row">
     <%# UMD Customization %>
-    <div class="col-md-2 col-sm-3 col-xs-4">
-      <a href="//lib.umd.edu" target="_blank"><img id="logo-header" class="img-responsive" width="170px" alt="University of Maryland Libraries Logo" src="<%= asset_url('/assets/images/liblogo.png') %>">    </a>
+    <div class="col-lg-2 col-md-3 col-sm-4 col-4">
+      <a href="//lib.umd.edu" target="_blank"><img id="logo-header" class="img-fluid" width="170px" alt="University of Maryland Libraries Logo" src="/assets/images/liblogo.png"></a>
     </div>
-    <div class="col-md-6 col-sm-5 col-xs-8">
+    <div class="col-lg-6 col-md-5 col-sm-8 col-8">
 		  <% if request.original_fullpath == '/' %>
         <span class="app-title"><%= t('brand.title') %></span>
 		  <% else %>
         <a title="<%=t('brand.title_link_text') %>" href="<%= AppConfig[:public_proxy_url] %>" class="app-title"><%= t('brand.title') %></a>
       <% end %>
     </div>
-    <div class="col-md-4 col-sm-4 col-xs-12">
+    <div class="col-lg-4 col-md-4 col-sm-12 col-12">
       <div class="website-feedback">
         <p class="website-feedback-label">Help us improve our website</p>
         <a class="website-feedback-link" href="<%= AppConfig[:website_feedback_url] %>">Send feedback</a>

@@ -1,51 +1,45 @@
 <%# UMD Customization %>
 <section id="navigation" class="container">
-<%# End UMD Customization %>
-  <nav class="navbar navbar-default" aria-label="<%= I18n.t("navigation.top_level") %>">
-    <%# UMD Customization %>
-    <div class="navbar-header top-bar">
-    <%# End UMD Customization %>
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapsemenu"
-              aria-expanded="false">
-        <span class="sr-only"><%= I18n.t("navbar.toggle_navigation") %></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
+  <nav class="navbar navbar-expand-md navbar-light navbar-default bg-light p-0" aria-label="<%= I18n.t("navigation.top_level") %>">
+    <div class="navbar-header top-bar flex-grow-1 d-flex align-items-start">
+    <button type="button" class="navbar-toggle navbar-toggler m-2" data-toggle="collapse" data-target="#collapsemenu" aria-expanded="false">
+        <div>
+        <%# End UMD Customization %>
+          <span class="sr-only"><%= t('navigation.mobile_menu') %></span>
+          <span class="navbar-toggler-icon"></span>
+        </div>
       </button>
-      <%# UMD Customization %>
-      <div class="collapse navbar-collapse pull-left" id="collapsemenu">
-      <%# End UMD Customization %>
-        <ul class="nav nav navbar-nav">
+      <div class="collapse navbar-collapse top-bar pl-4" id="collapsemenu">
+        <ul class="navbar-nav mr-auto">
           <%# TODO: add class="active" if we're on that page %>
           <% $MAIN_MENU.each do |link| %>
             <%# UMD Customization %>
             <% uri = URI.parse(link[0]) %>
-            <% if uri.relative? %>
-              <% link[0] = app_prefix(link[0]) %>
-            <% end %>
-            <li><a href="<%= link[0] %>"><%= t(link[1]) %></a></li>
+            <% link_url = uri.relative? ? app_prefix(link[0]) : link[0] %>
+            <li class="nav-item p-2">
+            <a class="nav-link" href="<%= link_url %>"><%= t(link[1]) %></a>
+            </li>
             <%# End UMD Customization %>
           <% end %>
           <% unless AppConfig[:pui_hide][:search_tab] %>
-            <li><a href="<%=  app_prefix('/search?reset=true') %>" title="<%= I18n.t('search_tab', :target => t('archive._plural'))%>">
+            <li class="nav-item p-2"><a class="nav-link" href="<%=  app_prefix('/search?reset=true') %>" title="<%= I18n.t('search_tab', :target => I18n.t('archive._plural'))%>">
                 <span class="fa fa-search" aria-hidden="true"></span>
-                <span class="sr-only"><%= I18n.t('search_tab', :target => t('archive._plural')) %></span>
+                <span class="sr-only"><%= I18n.t('search_tab', :target => I18n.t('archive._plural')) %></span>
               </a>
             </li>
           <% end %>
         </ul>
+        </div>
+        <%# UMD Customization%>
+        <% unless AppConfig[:pui_hide][:search_box_tab] %>
+          <div class="ml-auto my-auto d-none d-sm-block pull-right">
+            <%= render partial: 'shared/navigation_search', locals: {search_box_id: '1'} %>
+          </div>
+          <div class="ml-auto my-auto d-block d-sm-none pull-right">
+            <%= render partial: 'shared/navigation_search', locals: {search_box_id: '2'} %>
+          </div>
+        <% end %>
+        <%# End UMD Customization %>
       </div>
-      <%# UMD Customization %>
-      <% unless AppConfig[:pui_hide][:search_box_tab] %>
-        <div class="pull-right hidden-xxs">
-          <%# Using search_box_id to prevent search form from having duplicate HTML ids %>
-          <%= render partial: 'shared/navigation_search', locals: {search_box_id: '1'} %>
-        </div>
-        <div class="visible-xxs">
-          <%= render partial: 'shared/navigation_search', locals: {search_box_id: '2'} %>
-        </div>
-      <% end %>
-      <%# End UMD Customization %>
-    </div>
   </nav>
 </section>

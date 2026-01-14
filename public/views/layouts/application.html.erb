@@ -58,8 +58,8 @@
   <%# End UMD Customization %>
 </head>
 
+<body class="min-h-screen d-flex flex-column">
   <%# UMD Customization %>
-  <body class="site">
   <%= umd_lib_environment_banner %>
   <%# End UMD Customization %>
 
@@ -71,14 +71,12 @@
 
 	<%= render partial: 'shared/skipnav' %>
 
-	<%# UMD Customization %>
-	<div class="container-fluid no-pad container">
+	<div class="container-fluid no-pad">
 		<%= render partial: 'shared/header' %>
+		<%= render partial: 'shared/navigation' %>
 	</div>
 
-	<%= render partial: 'shared/navigation' %>
-	<section id="container-fluid" class="container site-content">
-	<%# End UMD Customization %>
+	<section id="content" class="container-fluid mt-2 pt-2 flex-grow-1">
 		<a name="maincontent" id="maincontent"></a>
 		<%= flash_messages %>
 		<%= yield %>

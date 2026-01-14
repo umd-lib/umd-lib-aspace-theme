@@ -1,10 +1,7 @@
-<%# UMD Customization %>
-<section id="navigation" class="container">
-  <nav class="navbar navbar-expand-md navbar-light navbar-default bg-light p-0" aria-label="<%= I18n.t("navigation.top_level") %>">
-    <div class="navbar-header top-bar flex-grow-1 d-flex align-items-start">
-    <button type="button" class="navbar-toggle navbar-toggler m-2" data-toggle="collapse" data-target="#collapsemenu" aria-expanded="false">
-        <div>
-        <%# End UMD Customization %>
+<section id="navigation">
+  <nav class="navbar navbar-expand-lg navbar-light navbar-default bg-light p-0" aria-label="<%= I18n.t("navigation.top_level") %>">
+      <button type="button" class="navbar-toggler m-2 ml-auto" data-toggle="collapse" data-target="#collapsemenu" aria-expanded="false">
+        <div class="container">
           <span class="sr-only"><%= t('navigation.mobile_menu') %></span>
           <span class="navbar-toggler-icon"></span>
         </div>
@@ -17,20 +14,19 @@
             <% uri = URI.parse(link[0]) %>
             <% link_url = uri.relative? ? app_prefix(link[0]) : link[0] %>
             <li class="nav-item p-2">
-            <a class="nav-link" href="<%= link_url %>"><%= t(link[1]) %></a>
+              <a class="nav-link" href="<%= link_url %>"><%= t(link[1]) %></a>
             </li>
             <%# End UMD Customization %>
           <% end %>
           <% unless AppConfig[:pui_hide][:search_tab] %>
-            <li class="nav-item p-2"><a class="nav-link" href="<%=  app_prefix('/search?reset=true') %>" title="<%= I18n.t('search_tab', :target => I18n.t('archive._plural'))%>">
+            <li class="nav-item p-2"><a class="nav-link" href="<%=  app_prefix('/search?reset=true') %>" title="<%= I18n.t('search_tab', :target => t('archive._plural'))%>">
                 <span class="fa fa-search" aria-hidden="true"></span>
-                <span class="sr-only"><%= I18n.t('search_tab', :target => I18n.t('archive._plural')) %></span>
+                <span class="sr-only"><%= I18n.t('search_tab', :target => t('archive._plural')) %></span>
               </a>
             </li>
           <% end %>
         </ul>
-        </div>
-        <%# UMD Customization%>
+        <%# UMD Customization %>
         <% unless AppConfig[:pui_hide][:search_box_tab] %>
           <div class="ml-auto my-auto d-none d-sm-block pull-right">
             <%= render partial: 'shared/navigation_search', locals: {search_box_id: '1'} %>

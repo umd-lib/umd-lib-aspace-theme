@@ -191,30 +191,6 @@ h1, h2, h3, h4, h5, h6 {
     padding: 20px 0 30px;
 }
 
-/* Sticky footer */
-
-.site {
-    font-size: .875rem;
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -webkit-flex-direction: column;
-    -ms-flex-direction: column;
-}
-.site-content {
-    -webkit-box-flex: 1;
-    -webkit-flex: 1 0 auto;
-    -ms-flex: 1 0 auto;
-    flex: 1 0 auto;
-}
-
-/* end of sticky footer*/
-
 @media (min-width: 992px){
 .app-title {
     font-size: 28px;

@@ -2,7 +2,7 @@
    <div class="row">
       <div class="col-md-12">
         <%# UMD Customization %>
-        <p><% if AppConfig[:enable_public] %><%= I18n.t("footer.public_interface", :public_url => AppConfig[:public_proxy_url]) %> | <% end %><a href="https://umd.edu/web-accessibility">Web Accessibility</a> | <%= I18n.t("footer.archivesspace_home") %> | <%= ASConstants.VERSION %><% if AppConfig[:feedback_url] && !AppConfig[:feedback_url].blank? %> | <%= I18n.t("footer.feedback", :feedback_url => AppConfig[:feedback_url]) %> <% end %></p>
+        <p><% if AppConfig[:enable_public] %><%= t("footer.public_interface", :public_url => AppConfig[:public_proxy_url]) %> | <% end %><a href="https://umd.edu/web-accessibility">Web Accessibility</a> | <%= t("footer.archivesspace_home") %> | <%= ASConstants.VERSION %><% if AppConfig[:feedback_url] && !AppConfig[:feedback_url].blank? %> | <%= t("footer.feedback", :feedback_url => AppConfig[:feedback_url]) %> <% end %></p>
         <%# End UMD Customization %>
       </div>
    </div>

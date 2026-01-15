@@ -35,8 +35,7 @@
       <%# UMD Customization %>
       <% unless AppConfig[:pui_hide][:search_box_tab] %>
         <div class="p-2">
-          <%# Using search_box_id to prevent search form from having duplicate HTML ids %>
-          <%= render partial: 'shared/navigation_search', locals: {search_box_id: '1'} %>
+          <%= render partial: 'shared/navigation_search' %>
         </div>
       <% end %>
       <%# End UMD Customization %>

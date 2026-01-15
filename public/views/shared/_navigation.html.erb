@@ -1,6 +1,8 @@
 <section id="navigation">
-  <nav class="navbar navbar-expand-lg navbar-light navbar-default bg-light p-0" aria-label="<%= I18n.t("navigation.top_level") %>">
-      <button type="button" class="navbar-toggler m-2 ml-auto" data-toggle="collapse" data-target="#collapsemenu" aria-expanded="false">
+  <%# UMD Customization %>
+  <nav class="navbar navbar-expand-lg navbar-light navbar-default top-bar p-0 align-items-start" aria-label="<%= I18n.t("navigation.top_level") %>">
+      <button type="button" class="bg-light navbar-toggler m-2" data-toggle="collapse" data-target="#collapsemenu" aria-expanded="false">
+  <%# End UMD Customization %>
         <div class="container">
           <span class="sr-only"><%= t('navigation.mobile_menu') %></span>
           <span class="navbar-toggler-icon"></span>
@@ -11,6 +13,9 @@
           <%# TODO: add class="active" if we're on that page %>
           <% $MAIN_MENU.each do |link| %>
             <%# UMD Customization %>
+            <%# The following is necessary because the "Help" link is a
+                fully-qualified URL to an external site, and not a relative
+                URL path. %>
             <% uri = URI.parse(link[0]) %>
             <% link_url = uri.relative? ? app_prefix(link[0]) : link[0] %>
             <li class="nav-item p-2">
@@ -26,16 +31,14 @@
             </li>
           <% end %>
         </ul>
-        <%# UMD Customization %>
-        <% unless AppConfig[:pui_hide][:search_box_tab] %>
-          <div class="ml-auto my-auto d-none d-sm-block pull-right">
-            <%= render partial: 'shared/navigation_search', locals: {search_box_id: '1'} %>
-          </div>
-          <div class="ml-auto my-auto d-block d-sm-none pull-right">
-            <%= render partial: 'shared/navigation_search', locals: {search_box_id: '2'} %>
-          </div>
-        <% end %>
-        <%# End UMD Customization %>
       </div>
+      <%# UMD Customization %>
+      <% unless AppConfig[:pui_hide][:search_box_tab] %>
+        <div class="p-2">
+          <%# Using search_box_id to prevent search form from having duplicate HTML ids %>
+          <%= render partial: 'shared/navigation_search', locals: {search_box_id: '1'} %>
+        </div>
+      <% end %>
+      <%# End UMD Customization %>
   </nav>
 </section>

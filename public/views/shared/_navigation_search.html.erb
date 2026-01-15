@@ -3,7 +3,7 @@
   <%= hidden_field_tag 'op[]', nil, id: "op_#{search_box_id}" %>
   <div class="input-group">
     <%= text_field_tag 'q[]', nil, id: "q_#{search_box_id}", :class => 'form-control umd-search', :placeholder => I18n.t('actions.search') %>
-    <span class="input-group-btn">
+    <span class="input-group-btn d-flex">
       <%= button_tag(type: "submit", class: "btn btn-default umd-search-btn") do %>
         <span class="fa fa-search" aria-hidden="true"></span>
         <span class="sr-only"><%= I18n.t('search_tab', :target => t('archive._plural')) %></span>

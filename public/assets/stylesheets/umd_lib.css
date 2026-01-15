@@ -122,9 +122,10 @@ p, a, l a, div a, .app-title {
 .umd-search-btn {
     background-color: #a40404;
     border-color: #a40404;
-	padding-top: 2px;
+    padding: 0 0.75rem 0 0.75rem;
 	height: 24px;
 	color: #fff;
+	border-radius: 0 0.25rem 0.25rem 0;
 }
 .navbar-form {
 	margin: 3px 5px;

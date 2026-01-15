@@ -36,6 +36,7 @@ customizations.
 | public/views/shared/_record_innards.html.erb | Field Reordering, Inventories Display |
 | public/views/shared/_result_record_summary.html.erb | Found In Reordering |
 | public/views/shared/_search.html.erb         | Search Box Image, Search Stop-gap |
+| public/views/welcome/show.html.erb           | Custom Home Page |
 
 ## Functionality
 
@@ -53,6 +54,17 @@ Verify that the footer has been customized, i.e., among other things contains:
 **Jira Issue(s):** LIBASPACE-112
 
 Verify that the UMD Libraries logo appears in the header.
+
+### Custom Home Page
+
+**Jira Issue(s):** LIBASPACE-199, LIBASPACE-116
+
+Home page has been significantly customized, including:
+
+* Placing an image behind the search box
+* Added two text panels under the search box:
+  * "About our archival collections"
+  * "Requesting material"
 
 ### Environment Banner
 
@@ -140,7 +152,8 @@ Adds the Matomo Analytics functionality to the public interface.
 
 Verified most easily when running in Kubernetes, by accessing a web page, and
 using the browser's "View Source" to examine the HTML source code, and verify
-that the HTML “head” tag contains Matomo Analytics JavaScript, i.e.code similar to the following:
+that the HTML “head” tag contains Matomo Analytics JavaScript, i.e.,
+code similar to the following:
 
 ```javascript
     <!-- Matomo Analytics -->

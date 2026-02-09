@@ -231,17 +231,6 @@ Removed the "Topic" facet.
 Verify on the search results page that a "Topic" facet is not in the
 "Additional filters" facet list.
 
-### Search Stop-gap
-
-**Jira Issue(s):** LIBASPACE-341
-
-Removed the "+" button allowing additional search filters to be added to the
-search box. This was done to as a stop-gap solution until a fix can be found
-(see LIBASPACE-342).
-
-Verify that the search panel on the home page does *not* contain a "+" button
-next to the "To" field
-
 ### UMD Header
 
 **Jira Issue(s):** LIBASPACE-110, LIBASPACE-137

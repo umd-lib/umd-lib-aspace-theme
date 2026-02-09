@@ -15,8 +15,7 @@
   <%= form_tag(app_prefix("#{search_url}"), method: 'get', :id => 'advanced_search') do %>
   <% (0...[1, @search.q.length].max).each do |i| %>
     <div class="row search_row align-items-end pt-1" id="search_row_<%= i %>">
-    <%# UMD Customization %>
-    <div class="col-sm-6 col-md-4 col-xl-1 bool form-group search-operator-field">
+      <div class="col-sm-6 col-md-4 col-xl-1 bool form-group search-operator-field">
         <%= label_tag("op#{i}", t('advanced_search.operator_label'), :class => 'font-weight-bold') %>
         <%= select_tag('op[]', options_for_select(Search.get_boolean_opts, @search[:op][i]), disabled: (i == 0), :id => "op#{i}",:class=> 'form-control' + (i == 0 ? ' d-none' : '') + ' options-for-select') %>
         <%= hidden_field_tag('op[]','', :id => 'op_') if i == 0 %>

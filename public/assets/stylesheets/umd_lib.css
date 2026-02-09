@@ -52,6 +52,7 @@
     padding: 30px;
     margin-bottom: 25px;
     background:  url('../images/letter.JPG') no-repeat fixed top rgba(247, 247, 247, 1);
+    background-size: cover;
 }
 .search-box {
     padding: 15px;

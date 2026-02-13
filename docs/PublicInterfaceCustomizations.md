@@ -88,11 +88,10 @@ with the "scopecontent" text as the fallback.
 
 (See LIBASPACE-119 for more detailed verification steps)
 
-Local development: On the "Archives of the Atlantic Monthly" entry verify that
-the text immediately under the "Collection Overview" tab displays the text
-"The Atlantic Monthly Press was founded in 1917...", (which is from the
-abstract), and not "The archives of Atlantic Monthly Press...", which is the
-text from the "scopecontent").
+On the "Atlantic Monthly records" entry verify that the text immediately under
+the "Collection Overview" tab displays the text "The Atlantic Monthly Press was
+founded in 1917...", (which is from the abstract), and not "The archives of
+Atlantic Monthly Press...", (which is the text from the "scopecontent" field).
 
 ### Found In Reordering
 
@@ -118,8 +117,8 @@ of the collection page.
 
 (See LIBASPACE-214 for more detailed verification steps)
 
-Local development: In the staff interface, edit the
-"Archives of the Atlantic Monthly" entry, and add an "External Documents" entry.
+In the staff interface, edit the "Atlantic Monthly records" entry, and add an
+"External Documents" entry.
 
 Then in the public interface, verify that an
 "Inventories/Additional Information" panel is shown in the collection page,
@@ -136,7 +135,7 @@ in the "Library Details" panel on collections pages.
 
 (See LIBASPACE-276 for more detailed verification steps)
 
-On a collections page, verify that in the "Library Detail" panel, the text
+On a collections page, verify that in the "Library Details" panel, the text
 "Part of the" only displays the associated library name, without adding an
 additional "Library".
 
@@ -150,10 +149,13 @@ the text should be "Part of the Michelle Smith Performing Arts Library", *not*
 
 Adds the Matomo Analytics functionality to the public interface.
 
-Verified most easily when running in Kubernetes, by accessing a web page, and
-using the browser's "View Source" to examine the HTML source code, and verify
-that the HTML “head” tag contains Matomo Analytics JavaScript, i.e.,
-code similar to the following:
+**Note:** Matomo analytics is only enabled for production, so this functionality
+cannot be verified in local development, or in the sandbox/test/qa Kubernetes
+namespaces.
+
+Go to the home page, and using the browser's "View Source" to examine the HTML
+source code. Verify that the HTML “head” tag contains Matomo Analytics
+JavaScript, i.e., code similar to the following:
 
 ```javascript
     <!-- Matomo Analytics -->
@@ -201,9 +203,9 @@ glass icon to the right.
 **Jira Issue(s):** LIBASPACE-141
 
 Simplified the display of resource identifier by removing the "Identifier:"
-label added to them in stock ArchivesSpace. The identifier is only displayed
-for "Collection", "Series", and "Subseries" types, and not for other types,
-such as "File".
+label added to "Collection", "Series", and "Subseries" types in stock
+ArchivesSpace. The identifier value will still be shown, without the
+"Identifier:" label.
 
 **Verification:**
 
